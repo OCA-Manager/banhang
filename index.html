@@ -263,8 +263,6 @@
     }
 
     loadCloudData();
-
-    <script>
     let products = JSON.parse(localStorage.getItem('products') || '[]');
     let orders = JSON.parse(localStorage.getItem('orders') || '[]');
     let importHistory = JSON.parse(localStorage.getItem('importHistory') || '[]');
@@ -284,6 +282,15 @@
       if(tabId === 'reports') generateReport();
       if(tabId === 'history') renderHistory();
     }
+
+    window.showTab = showTab;
+    window.addProduct = addProduct;
+    window.importStock = importStock;
+    window.addOrderItem = addOrderItem;
+    window.createOrder = createOrder;
+    window.deleteProduct = deleteProduct;
+    window.toggleCustomer = toggleCustomer;
+    window.viewOrderInvoice = viewOrderInvoice;
 
     function addProduct() {
       const product = {
